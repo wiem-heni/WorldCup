@@ -1,0 +1,201 @@
+.btn-lst {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  font-size: 125%;
+  text-align: left;
+}
+.card-header {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.text-input {
+  border: 0px;
+  border-bottom: 2px solid #17a2b8f5;
+  border-radius: 2px;
+  background:rgba(232, 240, 254, 0.175);
+}   
+.text-input:hover {
+  border-bottom: 3px solid #17a2b8;
+  background:rgba(232, 240, 254, 0.195);
+} 
+.select-input {
+  border: 0.75px solid #17a2b8f5;
+  border-bottom: 2px solid #17a2b8f5;
+  border-radius: 1px;
+  background:rgba(232, 240, 254, 0.175);
+}
+.btn {
+  border:1.75px solid;
+  border-radius: 1.75px;
+}
+
+
+.grass, .sky, .road{
+  position:relative;
+}
+
+.sky{
+  height:45%;
+}
+
+.grass{
+  height:25%;
+  background:seagreen;
+  border-top:3.5px solid #17a3b8c9;
+  border-bottom:1px dotted #17a3b899;
+}
+
+.road{
+  height:30%;
+  background:dimgrey;
+  border-top:10px solid grey;
+  border-bottom:10px solid grey;
+  width:100%;
+}
+
+.lines{
+  border:5px dashed #fff;
+  height:0px;
+  width:100%;
+  position:absolute;
+  top:45%; 
+}
+
+.cloud{
+  position:absolute;
+}
+
+/*/ ELEMENTS TO ANIMATE /*/
+/*--MARIO--*/
+.mario{
+  position:absolute;
+  top:-100px;
+  left:0px;
+  animation: drive 3s both infinite linear,
+             jump 0.3s 1.2s ease;          
+}
+/*--LUIGI--*/
+.luigi{
+  position:absolute;
+  top:-58px; 
+  left:0px;
+  animation-name:drive;
+  animation-duration:5s;
+  animation-fill-mode:both;
+  animation-iteration-count:infinite;
+  animation-timing-function:linear;
+}
+/*--CLOUD1--*/
+.cloud:nth-child(1){
+  width:19.5%;
+  height:9.5vh;
+  opacity:0.6;
+  top:17.5vh;
+  animation-name:wind;
+  animation-duration:80s;
+  animation-fill-mode:both;
+  animation-iteration-count:infinite;
+  animation-timing-function:linear;
+  animation-direction:reverse;
+}
+/*--CLOUD2--*/
+.cloud:nth-child(2){
+  width:32%;
+  height:15vh;
+  top:9vh;
+  animation-name:wind;
+  animation-duration:40s;
+  animation-fill-mode:forwards;
+  animation-iteration-count:infinite;
+  animation-timing-function:linear;
+  animation-direction:reverse;
+}
+/*--CLOUD3--*/
+.cloud:nth-child(3){
+  width:19.5%;
+  height:9.5vh;
+  opacity:0.6;
+  top:17.5vh;
+  animation-name:wind;
+  animation-duration:30s;
+  animation-fill-mode:both;
+  animation-iteration-count:infinite;
+  animation-timing-function:linear;
+  animation-direction:reverse;
+}
+.cloud:nth-child(4){
+  width:20.5%;
+  height:10vh;
+  opacity:0.6;
+  top:36.5vh;
+  animation-name:wind;
+  animation-duration:180s;
+  animation-fill-mode:both;
+  animation-iteration-count:infinite;
+  animation-timing-function:linear;
+  animation-direction:reverse;
+}
+
+/*/ KEYFRAMES /*/
+/*--DRIVE--*/
+@keyframes drive{
+  from{
+    transform: translateX(-200px);
+  }
+  to{
+    transform: translateX(1450px);
+  }
+}
+/*--JUMP--*/
+@keyframes jump{
+  0%{
+    top:-105px;
+  }
+  50%{
+    top:-125px;
+  }
+  100%{
+    top:-105px;
+  }
+}
+/*--WIND--*/
+@keyframes wind{
+  from{
+    left:-90%;
+  }
+  to{
+    left:95%;
+  }
+}
+
+
+.title{
+  -webkit-text-stroke: 0.75px black;
+  text-shadow:
+      2.5px 2.5px 0 #000,
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+     -1px 1px 0 #000,
+      1px 1px 0 #000;
+      color:#81eeff; 
+      font-size:125%;
+}
+.under-title {
+  -webkit-text-stroke: 0.25px rgba(0, 0, 0, 0.349);
+  color: white;
+  text-shadow:
+      2.5px 2.5px 0 #000,
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+     -1px 1px 0 #000,
+      1px 1px 0 #000;
+}
+.clickable {
+font-size: 280%;
+cursor: pointer;
+}
+.clickable:hover {
+font-size: 296%;
+}

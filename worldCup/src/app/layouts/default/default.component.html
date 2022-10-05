@@ -1,0 +1,14 @@
+<app-header (toggleSideBarForMe)="sideBarToggler($event)">
+    
+</app-header>
+
+<mat-drawer-container class=" {{ ( isLoggedIn$ && isAutorized() ) ? 'mat-drawer-content-bg' : '' }}">
+    <mat-drawer  *ngIf="!isAutorized() && isLoggedIn$ | async as isLoggedIn " mode="side" [opened]="sideBarOpen">
+        <app-sidebar></app-sidebar>
+    </mat-drawer>
+    <mat-drawer-content class="p-0 {{ isAutorized() ? 'overflow-hidden' : '' }}">
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>
+
+<app-footer *ngIf="isLoggedIn$ | async as isLoggedIn"></app-footer>

@@ -1,0 +1,40 @@
+<div class="h-100 overflow-hidden">
+    <div class="col-md-12 d-flex justify-content-center shadow" style="background:#4293ED;border:1px solid #4293ED;">
+        <div style="width:69%;">
+                <ul class="nav mt-2" role="tablist">
+                    <li class="nav-item nav-item-first w-25" (click)="menuChoice(1)">
+                        <a class="nav-link p-3 {{ menu == 1 ? 'active' : '' }}" >JOUEURS</a>
+                    </li>
+                    <li class="nav-item w-25" (click)="menuChoice(2)">
+                        <a class="nav-link p-3 {{ menu == 2 ? 'active' : '' }}">AJOUTER</a>
+                    </li>
+                </ul>
+        </div>
+    </div>
+    <div class="col-md-12 d-flex justify-content-center">
+            <div class="container w-75" style="height:73vh" *ngIf="menu == 1" >
+                <div class="d-flex justify-content-center h-100" style="overflow-y: scroll;border:1px solid rgba(0, 0, 0, 0.095);">
+                    <div class="row p-5 w-75">
+                        <div class="row w-100" *ngIf="joueurs">
+                            <div class="col-sm-3 p-1 w-100" *ngFor="let j of joueurs">
+                                    <div class="card mb-1 w-100" style="border-top-left-radius:10%;border-top-right-radius:10%;">
+                                        <img *ngIf="j.image" [routerLink]="['/worldcup/joueur/', j.id]" class="card-img-top" style="border-top-left-radius:12%;border-top-right-radius:12%;height:140px;" [src]="getUrl()+'/joueur/image/'+j.id+'?ts='+getTS()" alt="img">
+                                        <img *ngIf="!j.image" [routerLink]="['/worldcup/joueur/', j.id]" class="card-img-top" style="border-top-left-radius:12%;border-top-right-radius:12%;height:140px;" src="assets/player.png" alt="img">
+                                        <div class="p-1 ml-3">
+                                            <div class="p-1 pb-0 row">{{ j.nom }}</div>
+                                            <div class="p-1 pt-0 row">{{ j.prenom }}</div>
+                                            <div class="p-1 row" style="size:95%;color: #70757a;">{{ j.poste }}</div>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+            <div class="container w-75" style="height:73vh" *ngIf="menu == 2" >
+              <app-add-joueur class="w-100"></app-add-joueur>
+          </div>
+
+        </div>
+<div>

@@ -1,0 +1,83 @@
+<div class="h-100 overflow-hidden">
+    <div class="col-md-12 d-flex justify-content-center shadow" style="background:#4293ED;border:1px solid #4293ED;">
+        <div style="width:69%;">
+                <ul class="nav mt-2" role="tablist">
+                    <li class="nav-item nav-item-first w-25">
+                        <a class="nav-link p-3 active" >{{ joueur?.nom }} {{ joueur?.prenom }}</a>
+                    </li>
+                </ul>
+        </div>
+    </div>
+    <div class="col-md-12 d-flex justify-content-center">
+        <div class="container w-75" style="height:73vh" >
+            <div class="d-flex justify-content-center h-100" style="border:1px solid rgba(0, 0, 0, 0.095);">
+                <div class="row p-4 w-100">
+                    <div class="row w-100 p-3 pt-0">
+                        <div class="col-sm-3 w-100 d-inline-block">
+                                <div class="card mb-1 w-100" style="border-top-left-radius:10%;">
+                                    <img *ngIf="joueur.image" class="card-img-top" style="border-top-left-radius:12%;height:160px;" [src]="getUrl()+'/joueur/image/'+this.joueur?.id+'?ts='+getTS()"  alt="img">
+                                    <img *ngIf="!joueur.image" class="card-img-top" style="border-top-left-radius:12%;height:160px;" src="assets/player.png"  alt="img">
+                                    <div class="p-0 w-100">
+                                        <div class="btn-div">
+                                            <button *ngIf="!updatePhoto" class="btn btn-outline-info w-100" (click)="onUpdatePhoto()">Update</button>
+                                            <div *ngIf="updatePhoto" class="input-group w-100">
+                                                <button class="btn-upload" style="width:56px;padding:0px;" (click)="uploadPhoto()">
+                                                    Update
+                                                </button>
+                                                <div class="custom-file">
+                                                    <input type="file" (change)="onSelectedFile($event)" class="custom-file-input p-0 ">
+                                                    <div class="custom-file-label p-0 pt-2 pl-1 file text-left">{{progress}}%</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="col-sm-9 p-1 w-100 ">
+                            <div class="card mb-1 w-100 h-100" style="border-top-right-radius:10%;">
+                                <div class="d-flex justify-content-center h-100 pt-1">
+                                    <form [formGroup]="updateJoueurFormGroup" (ngSubmit)="updateJoueur()" class="w-75">
+                                        <div class="form-group row">
+                                            <label class="control-label col-3 pt-2">Nom : </label>
+                                            <input type="text" name="nom" formControlName="nom" class="form-control text-input col-9" required placeholder="Nom . . ."/>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="control-label col-3 pt-2">Prenom : </label>
+                                            <input type="text" name="prenom" formControlName="prenom" class="form-control text-input col-9" required placeholder="Prenom . . ."/>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="control-label col-3 pt-2">Age : </label>
+                                            <input type="text" name="age" formControlName="age" class="form-control text-input col-9" required placeholder="Age . . ."/>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="control-label col-3 pt-2">Numero : </label>
+                                            <input type="text" name="numero" formControlName="numero" class="form-control text-input col-9" required placeholder="Numero . . ."/>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="control-label col-3 pt-2">Poste : </label>
+                                            <input type="text" name="poste" formControlName="poste" class="form-control text-input col-9" required placeholder="Poste . . ."/>
+                                        </div>
+                                        <div class="form-group container row p-0 m-0">
+                                            <button type="submit" class="btn btn-info pr-5 pl-5 float-right" [disabled]="!updateJoueurFormGroup.valid">Mettre a jour</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+                
+
+    </div>
+<div>
+
+
+
+
+
+
+

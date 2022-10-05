@@ -1,0 +1,25 @@
+:host {
+    display: flex; 
+    flex-direction: column;
+    height: 100%;
+}
+mat-drawer {
+    width:350px;
+}
+mat-drawer-container {
+    height: 100%;
+}
+mat-drawer-content {
+    padding: 20px;
+}
+
+.mat-drawer-content-bg {
+    background:rgba(74, 204, 255, 0.575);
+    overflow:hidden;
+}
+  
+
+.btn-info {
+    background-color: #4293ED;
+  }
+  

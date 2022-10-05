@@ -1,0 +1,64 @@
+
+<div style="overflow: hidden;">   
+
+    <div class="container mt-md-4" style="overflow: hidden;">
+        <div class="col-md-8 col-md-offset-2">
+            
+            <div class="card">
+                <div class="card-header btn-group p-0" role="group" aria-label="Basic example">
+                    <button (click)="menuChoice(1)" type="button" class="btn btn-outline-info btn-lst {{ choice == 1 ? 'active' : '' }}">Sign In</button>
+                    <button (click)="menuChoice(2)" type="button" class="btn btn-outline-info btn-lst {{ choice == 2 ? 'active' : '' }}">Sign Up</button>
+                </div>
+                <div class="card-body">
+                    <!--SignIn-->
+                    <div *ngIf="mode==1">
+                        <div class="alert alert-danger">
+                            <strong>Bad credantials ! </strong> please verify the username and the password.
+                        </div>
+                    </div>
+                    <form *ngIf="choice==1" #f="ngForm" (ngSubmit)="onLogin(f.value)">
+                        <div class="form-group">
+                            <label class="control-label">Username : </label>
+                            <input type="text" name="username" ngModel="" class="form-control text-input" required placeholder="Enter the username . . ."/>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Password : </label>
+                            <input type="password" name="password" ngModel="" class="form-control text-input" required placeholder="Enter the password . . ."/>
+                        </div>
+                        <div class="float-right">
+                            <button type="submit" class="btn btn-info " [disabled]="!f.valid">Submit</button>
+                        </div>
+                    </form>
+                    <!--SignUp-->
+                    <form *ngIf="choice==2" #f="ngForm" (ngSubmit)="onLogin(f.value)">
+                        <div class="form-group">
+                            <label class="control-label">Username : </label>
+                            <input type="text" name="username" ngModel="" class="form-control text-input" required placeholder="Enter the username . . ."/>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Password : </label>
+                            <input type="password" name="password" ngModel="" class="form-control text-input" required placeholder="Enter the password . . ."/>
+                        </div>
+                        <div class="float-right">
+                            <button type="submit" class="btn btn-info" [disabled]="!f.valid">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div style="border-bottom:1px solid #3f51b5cc;width:100%;height:325px;position: absolute;bottom: 0;margin:0;overflow:hidden;">
+        
+        <div class="sky">
+            
+            <div class="clickable" [routerLink]="['/worldcup']" style="position:relative;top:20px;right:-82%;">
+                <span class="title">W<span class="under-icon">⚽️</span>rld</span><span class="under-title">Cup</span>
+            </div>
+        </div>
+       
+    </div>
+</div>
+
+
+

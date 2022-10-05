@@ -1,0 +1,194 @@
+table {
+  width: 100%;
+}
+.example-form {
+min-width: 150px;
+max-width: 500px;
+width: 100%;
+}
+
+.example-full-width {
+width: 100%;
+}
+
+.active-cyan input.form-control[type=text]:focus:not([readonly]) {
+border-bottom: 1px solid #4dd0e1;
+box-shadow: 0 1px 0 0 #4dd0e1;
+}
+
+.cars-container {
+border:1px solid #3f51b555; 
+padding:0.75px;
+border-radius: 4.5px;
+}
+
+.text-input {
+border: 0px;
+border-bottom: 2px solid #4293EDf5;
+border-radius: 0px;
+height:65px;
+}   
+
+.text-input:hover {
+border-bottom: 3px solid #4293ED;
+} 
+
+.btn {
+border:1.75px solid;
+border-radius: 1.75px;
+}
+.btn:hover {
+border:1.75px solid;
+border-radius: 1.75px;
+}
+
+
+
+.custom-slider .ng5-slider .ng5-slider-bar {
+  background: #4293ED;
+  height: 2px;
+}
+.custom-slider .ng5-slider .ng5-slider-selection {
+  background: #4293ED;
+}
+
+.custom-slider .ng5-slider .ng5-slider-pointer {
+  width: 8px;
+  height: 16px;
+  top: auto; /* to remove the default positioning */
+  bottom: 0;
+  background-color: #4293ED;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.custom-slider .ng5-slider .ng5-slider-pointer:after {
+  display: none;
+}
+
+.custom-slider .ng5-slider .ng5-slider-bubble {
+  bottom: 12px;
+  color:#3f51b5;
+}
+
+.custom-slider .ng5-slider .ng5-slider-limit {
+
+  color: #4293ED;
+}
+
+.custom-slider .ng5-slider .ng5-slider-tick {
+  width: 1px;
+  height: 0px;
+  margin-left: 4px;
+  border-radius: 0;
+  background: #4293ED;
+  top: -1px;
+}
+
+.custom-slider .ng5-slider .ng5-slider-tick.ng5-slider-selected {
+  background: #4293ED;
+}
+
+
+.container {
+display: block;
+position: relative;
+padding-left: 35px;
+margin-bottom: 12px;
+cursor: pointer;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+position: absolute;
+opacity: 0;
+cursor: pointer;
+height: 0;
+width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+position: absolute;
+top: 0;
+left: 0;
+height: 19px;
+width: 19px;
+background-color: #eee;
+border: 1px solid #4293ED;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+color:#d3d3d3;
+background-color: #17a3b8d7;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+left: 7px;
+top: 4px;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 3px 3px 0;
+-webkit-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+transform: rotate(45deg);
+}
+
+  
+a{
+  color:white;
+  cursor: pointer;
+}
+
+a.nav-link.active {
+  border:0px solid black;
+  border-bottom:5px solid white;
+  background:#00000000;
+  color:white;
+}
+
+a:hover, a:focus, a:visited {
+  border-bottom:5px solid #00000003;
+  background:#00000033;
+  color:white;
+}
+ a.nav-link.active:hover {
+  border:0px solid black;
+  background:#00000033;
+  border-bottom:5px solid white;
+  color:white;
+}
+
+
+.btn-info {
+  background-color: #4293ED;
+}
+
+.btn-info {
+    background-color: #4293ED;
+  }
+  
